@@ -2,75 +2,81 @@ export const requestNotificationPermission =
   async () => {
 
     if (!("Notification" in window))
-      return;
+      return false;
+
+    const permission =
+      await Notification.requestPermission();
+
+    return permission === "granted";
+  };
+
+export const showNotification =
+  async (title, body) => {
 
     if (
       Notification.permission !==
       "granted"
-    ) {
+    ) return;
 
-      await Notification
-        .requestPermission();
+    if ("serviceWorker" in navigator) {
+
+      const registration =
+        await navigator.serviceWorker.ready;
+
+      registration.showNotification(
+        title,
+        {
+          body,
+          icon: "/icon-192.png",
+          badge: "/icon-192.png",
+          vibrate: [200, 100, 200],
+        }
+      );
     }
   };
-
-export const showNotification = (
-  title,
-  body
-) => {
-
-  if (
-    Notification.permission ===
-    "granted"
-  ) {
-
-    new Notification(title, {
-
-      body,
-
-      icon: "/icon-192.png",
-    });
-  }
-};
 
 export const startReminderSystem =
   (logs) => {
 
-    setInterval(() => {
+    const interval =
+      setInterval(async () => {
 
-      const now = new Date();
+        const now = new Date();
 
-      const hours =
-        now.getHours();
+        const hours =
+          now.getHours();
 
-      const minutes =
-        now.getMinutes();
+        const minutes =
+          now.getMinutes();
 
-      const today =
-        now.toLocaleDateString();
+        const today =
+          now.toLocaleDateString();
 
-      const updatedToday =
-        logs.some(
-          (log) =>
-            log.date === today
-        );
+        const updatedToday =
+          logs.some(
+            (log) =>
+              log.date === today
+          );
 
-      if (updatedToday) return;
+        if (updatedToday) return;
 
-      const reminderHours =
-        [20, 21, 22];
+        const reminderHours =
+          [20, 21, 22];
 
-      if (
-        reminderHours.includes(hours)
-        &&
-        minutes === 0
-      ) {
+        if (
+          reminderHours.includes(hours)
+          &&
+          minutes === 0
+        ) {
 
-        showNotification(
-          "Data Analyst Tracker",
-          "You haven't updated today's progress yet 🚀"
-        );
-      }
+          await showNotification(
+            "Data Analyst Tracker",
+            "You haven't updated today's progress yet 🚀"
+          );
+        }
 
-    }, 60000);
+      }, 60000);
+
+    return () =>
+      clearInterval(interval);
   };
