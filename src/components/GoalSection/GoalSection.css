@@ -1,0 +1,128 @@
+.goal-section {
+
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(18px);
+
+  padding: 30px;
+
+  border-radius: 28px;
+}
+
+.goal-section h2 {
+
+  margin-bottom: 25px;
+
+  font-size: 1.8rem;
+}
+
+.goal-input-box {
+
+  display: flex;
+
+  gap: 15px;
+
+  margin-bottom: 28px;
+}
+
+.goal-input-box input {
+
+  flex: 1;
+
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  border-radius: 16px;
+
+  padding: 16px;
+
+  color: white;
+
+  font-size: 1rem;
+
+  outline: none;
+}
+
+.goal-input-box button {
+
+  border: none;
+
+  background:
+    linear-gradient(
+      to right,
+      #22c55e,
+      #16a34a
+    );
+
+  color: white;
+
+  padding: 0 28px;
+
+  border-radius: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.goal-list {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+.goal-item {
+
+  background:
+    rgba(255,255,255,0.03);
+
+  border:
+    1px solid rgba(255,255,255,0.06);
+
+  border-radius: 18px;
+
+  padding: 20px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.goal-item p {
+
+  font-size: 1rem;
+}
+
+.goal-item button {
+
+  border: none;
+
+  background:
+    linear-gradient(
+      to right,
+      #ef4444,
+      #e11d48
+    );
+
+  color: white;
+
+  padding: 12px 18px;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+}

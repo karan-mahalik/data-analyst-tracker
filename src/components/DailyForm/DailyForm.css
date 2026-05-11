@@ -1,0 +1,75 @@
+.daily-form {
+  background: rgba(255,255,255,0.05);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(18px);
+
+  padding: 30px;
+
+  border-radius: 25px;
+
+  margin-bottom: 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.daily-form h2 {
+  font-size: 1.5rem;
+}
+
+.daily-form input,
+.daily-form textarea {
+  background: rgba(255,255,255,0.04);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 15px;
+
+  padding: 16px;
+
+  color: white;
+
+  font-size: 1rem;
+
+  outline: none;
+
+  transition: 0.3s;
+}
+
+.daily-form input:focus,
+.daily-form textarea:focus {
+  border-color: #7c3aed;
+  box-shadow:
+    0 0 15px rgba(124,58,237,0.5);
+}
+
+.daily-form button {
+  border: none;
+
+  padding: 16px;
+
+  border-radius: 15px;
+
+  background: linear-gradient(
+    to right,
+    #2563eb,
+    #9333ea
+  );
+
+  color: white;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.daily-form button:hover {
+  transform: scale(1.02);
+}
