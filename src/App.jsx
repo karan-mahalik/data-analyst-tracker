@@ -82,6 +82,9 @@ function App() {
   const [loading, setLoading] =
     useState(true);
 
+  const [sidebarOpen, setSidebarOpen] =
+    useState(false);
+
   /* FETCH DATABASE DATA */
 
   useEffect(() => {
@@ -259,7 +262,13 @@ function App() {
 
       {/* SIDEBAR */}
 
-      <aside className="sidebar">
+      <aside
+        className={
+          sidebarOpen
+            ? "sidebar mobile-open"
+            : "sidebar"
+        }
+      >
 
         <div>
 
@@ -360,7 +369,12 @@ function App() {
 
         <div className="topbar">
 
-          <div className="menu-icon">
+          <div
+            className="menu-icon"
+            onClick={() =>
+              setSidebarOpen(!sidebarOpen)
+            }
+          >
 
             <FaBars />
 
