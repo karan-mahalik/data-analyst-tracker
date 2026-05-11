@@ -299,3 +299,84 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+
+  .layout {
+    flex-direction: column;
+  }
+
+  .main-content {
+    padding: 15px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-card {
+    min-height: auto;
+    padding: 22px;
+  }
+
+  .card-content h1 {
+    font-size: 2rem;
+  }
+
+  .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .task-box,
+  .goal-input-box {
+    flex-direction: column;
+  }
+
+  .task-box button,
+  .goal-input-box button {
+    width: 100%;
+    padding: 14px;
+  }
+
+  .topbar {
+    margin-bottom: 20px;
+  }
+
+  .top-icons {
+    gap: 15px;
+  }
+
+  .profile {
+    width: 40px;
+    height: 40px;
+  }
+
+  .analytics-page,
+  .chart-container,
+  .daily-form,
+  .goal-section,
+  .checklist-section,
+  .progress-summary,
+  .recent-logs {
+    padding: 20px;
+  }
+
+  .log-card {
+    padding: 18px;
+  }
+
+  .chart-container {
+    overflow-x: auto;
+  }
+}
